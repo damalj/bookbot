@@ -1,6 +1,6 @@
 
 import re
-from stats import count_words
+from stats import count_words, char_counts
 
 def get_book_text(filepath: str) -> str:
 	"""Return the contents of the file at `filepath` as a string.
@@ -19,5 +19,6 @@ if __name__ == "__main__":
 		text = get_book_text("books/frankenstein.txt")
 		# print(f"Read {len(text)} characters from books/frankenstein.txt")
 		print(f"Found {count_words(text)} total words")
+		print(char_counts(text))
 	except FileNotFoundError:
 		print("books/frankenstein.txt not found; demo skipped")
